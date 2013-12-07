@@ -6,7 +6,7 @@
 # catalog-version 1.005
 Name:		texlive-venturisadf
 Version:	1.005
-Release:	5
+Release:	6
 Summary:	Venturis ADF fonts collection
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/venturisadf
