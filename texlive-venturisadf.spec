@@ -1,19 +1,13 @@
-# revision 19444
-# category Package
-# catalog-ctan /fonts/venturisadf
-# catalog-date 2010-07-12 22:26:03 +0200
-# catalog-license other-free
-# catalog-version 1.005
 Name:		texlive-venturisadf
-Version:	1.005
-Release:	12
+Version:	19444
+Release:	1
 Summary:	Venturis ADF fonts collection
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/venturisadf
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -30,12 +24,12 @@ LaTeX, is also provided (and makes use of the nfssext-cfr
 package).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -859,7 +853,8 @@ package).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
