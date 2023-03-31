@@ -1,6 +1,6 @@
 Name:		texlive-venturisadf
 Version:	19444
-Release:	1
+Release:	2
 Summary:	Venturis ADF fonts collection
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/venturisadf
