@@ -3,7 +3,7 @@ Version:	19444
 Release:	2
 Summary:	Venturis ADF fonts collection
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/venturisadf
+URL:		https://www.ctan.org/tex-archive/fonts/venturisadf
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.doc.r%{version}.tar.xz
