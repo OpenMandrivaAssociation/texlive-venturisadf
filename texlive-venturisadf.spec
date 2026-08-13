@@ -1,9 +1,10 @@
 %global tl_name venturisadf
 %global tl_revision 79618
+%global tl_version 2.0
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	2.0
+Version:	%{tl_version}
 Release:	%{tl_revision}.1
 Summary:	Venturis ADF fonts collection
 Group:		Publishing
@@ -14,7 +15,8 @@ Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.doc.
 Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/venturisadf.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 Serif and sans serif complete text font families, in both Adobe Type 1
@@ -23,3 +25,14 @@ family, and has been modified and developed by the Arkandis Digital
 foundry. Support for using the fonts, in LaTeX, is also provided (and
 makes use of the nfssext-cfr package).
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_updmap_d}
+cat > %{buildroot}%{_texmf_updmap_d}/%{tl_name} <<'TL_DROPIN_EOF'
+# from venturisadf:
+Map yv1.map
+Map yv2.map
+Map yv3.map
+Map yvo.map
+Map yvt.map
+TL_DROPIN_EOF
